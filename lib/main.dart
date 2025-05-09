@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'ui/note/note_view.dart';
+import 'ui/auth/login/login_view.dart';
+import 'ui/core/themes/theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,6 +10,6 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Note App', theme: ThemeData(primarySwatch: Colors.blue), home: NoteListView());
+    return MaterialApp(title: 'Note App', theme: AppTheme.lightTheme, darkTheme: AppTheme.darkTheme, home: LoginView());
   }
 }
