@@ -7,6 +7,8 @@ import 'note_viewmodel.dart';
 class NoteListView extends StatelessWidget {
   final NoteViewModel viewModel = NoteViewModel();
 
+  NoteListView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

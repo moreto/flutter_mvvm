@@ -26,7 +26,35 @@ class AppTheme {
     displayLarge: GoogleFonts.rubik(textStyle: TextStyle(fontWeight: FontWeight.w400, color: AppColors.kPrimary, fontSize: 16)),
   );
 
-  static const _inputDecorationTheme = InputDecorationTheme(hintStyle: TextStyle(color: AppColors.grey3, fontSize: 18.0, fontWeight: FontWeight.w400));
+  static final _inputDecorationTheme = InputDecorationTheme(
+    // filled: true,
+    fillColor: AppColors.kWhite,
+    // contentPadding: const EdgeInsets.all(8),
+    floatingLabelBehavior: FloatingLabelBehavior.always,
+    prefixIconColor: AppColors.kPrimaryFixed,
+    hintStyle: GoogleFonts.rubik(textStyle: TextStyle(fontWeight: FontWeight.w400, color: AppColors.kPrimaryFixed, fontSize: 14)),
+    // errorStyle: GoogleFonts.rubik(textStyle: const TextStyle(fontWeight: FontWeight.w400, color: Colors.red, fontSize: kLabelMedium)),
+    labelStyle: GoogleFonts.rubik(textStyle: TextStyle(color: AppColors.kBlack, fontSize: 18, fontWeight: FontWeight.w600)),
+    // focusColor: kBlack,
+    border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black12)),
+    enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black12)),
+    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColors.kPrimary), borderRadius: BorderRadius.all(Radius.circular(8))),
+    errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red), borderRadius: BorderRadius.all(Radius.circular(8))),
+  );
+
+  static final _elevatedButtonTheme = ElevatedButtonThemeData(
+    style: ButtonStyle(
+      iconColor: WidgetStatePropertyAll(AppColors.kWhite),
+      backgroundColor: WidgetStatePropertyAll(AppColors.kPrimary),
+      foregroundColor: WidgetStatePropertyAll(AppColors.kBlack),
+      elevation: const WidgetStatePropertyAll(0),
+      shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
+    ),
+  );
+
+  static const _textButtonTheme = TextButtonThemeData(
+    style: ButtonStyle(visualDensity: VisualDensity.compact, tapTargetSize: MaterialTapTargetSize.shrinkWrap, padding: WidgetStatePropertyAll(EdgeInsets.zero)),
+  );
 
   static ThemeData lightTheme = ThemeData(
     primaryColor: AppColors.kPrimary,
@@ -37,24 +65,9 @@ class AppTheme {
     inputDecorationTheme: _inputDecorationTheme,
     // extensions: [TagChipTheme(chipColor: AppColors.whiteTransparent, onChipColor: Colors.white)],
     iconTheme: IconThemeData(color: AppColors.kPrimaryFixed),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-        textStyle: WidgetStatePropertyAll(TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.kWhite)),
-        iconColor: WidgetStatePropertyAll(AppColors.kWhite),
-        backgroundColor: WidgetStatePropertyAll(AppColors.kPrimary),
-        foregroundColor: WidgetStatePropertyAll(AppColors.kBlack),
-        elevation: const WidgetStatePropertyAll(0),
-        shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
-      ),
-    ),
-    textButtonTheme: const TextButtonThemeData(
-      style: ButtonStyle(
-        // textStyle:  TextStyle(fontWeight: FontWeight.w400, color: kWhite, fontSize: kLabelLarge),
-        visualDensity: VisualDensity.compact,
-        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        padding: WidgetStatePropertyAll(EdgeInsets.zero),
-      ),
-    ),
+    elevatedButtonTheme: _elevatedButtonTheme,
+    textButtonTheme: _textButtonTheme,
+    dividerTheme: const DividerThemeData(color: Colors.transparent),
   );
 
   static ThemeData darkTheme = ThemeData(

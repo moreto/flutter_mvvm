@@ -8,8 +8,16 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Note App', theme: AppTheme.lightTheme, darkTheme: AppTheme.darkTheme, home: LoginView());
+    return MaterialApp(
+      title: 'Note App',
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      home: LoginView(),
+      //  localizationsDelegates: [GlobalWidgetsLocalizations.delegate, GlobalMaterialLocalizations.delegate, AppLocalizationDelegate()],
+    );
   }
 }
