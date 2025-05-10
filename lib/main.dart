@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mvvm/routing/router.dart';
 
-import 'ui/auth/login/login_view.dart';
 import 'ui/core/themes/theme.dart';
 
 void main() {
@@ -12,11 +12,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Note App',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: LoginView(),
+      // home: StartView(),
+      routerConfig: router(),
       //  localizationsDelegates: [GlobalWidgetsLocalizations.delegate, GlobalMaterialLocalizations.delegate, AppLocalizationDelegate()],
     );
   }

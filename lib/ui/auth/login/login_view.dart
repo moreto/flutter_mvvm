@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class LoginView extends StatefulWidget {
@@ -102,9 +103,10 @@ class _LoginViewState extends State<LoginView> {
                       width: MediaQuery.sizeOf(context).width / 2 - 24,
                       child: ElevatedButton(
                         onPressed: () {
-                          if (formKey.currentState!.validate()) {
-                            // controller.login();
-                          }
+                          context.go('/start');
+                          // if (formKey.currentState!.validate()) {
+                          //   // controller.login();
+                          // }
                         },
                         child: Text('login'.toUpperCase()),
                       ),
