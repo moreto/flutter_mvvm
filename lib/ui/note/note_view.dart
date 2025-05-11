@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 import 'note_model.dart';
 import 'note_viewmodel.dart';
@@ -13,7 +12,7 @@ class NoteListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Note App'), leading: IconButton(icon: Icon(Icons.arrow_back, color: Colors.black), onPressed: () => context.pop(true))),
+      appBar: AppBar(title: Text('Note App')),
       body: BlocBuilder<NoteViewModel, List<Note>>(
         bloc: viewModel,
         builder: (context, notes) {

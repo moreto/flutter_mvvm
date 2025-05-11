@@ -63,7 +63,7 @@ class _StartViewState extends State<StartView> {
                   const SizedBox(width: 16),
                   GestureDetector(
                     onTap: () {
-                      context.go(Routes.note);
+                      context.push(Routes.note);
                     },
                     child: SizedBox(
                       height: 65,
