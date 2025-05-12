@@ -6,7 +6,7 @@ import '../../../commons/enum.dart';
 interface class AuthRepository {
   Future<Map<String, dynamic>> login({required Map<String, dynamic> requestBody}) async {
     try {
-      final result = ProviderHttp.of(Service.rotulosByLocale).request(verb: Verb.post, body: requestBody);
+      final result = ProviderHttp.of(Service.login).request(verb: Verb.post, body: requestBody);
 
       // final result = await _providerHttp.request(LoginRequest(email: email, password: password));
 
