@@ -86,6 +86,58 @@ class _StartViewState extends State<StartView> {
                   ),
                 ],
               ),
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      context.push(Routes.bancoList);
+                    },
+                    child: SizedBox(
+                      height: 65,
+                      width: MediaQuery.sizeOf(context).width / 2 - 32,
+                      child: Card(
+                        color: AppColors.kWhite,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8), side: BorderSide(color: AppColors.kWhite, width: 1.0)),
+                        margin: const EdgeInsets.all(0),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [Icon(MdiIcons.bank, color: AppColors.kPrimary), Text('bank', style: Theme.of(context).textTheme.labelMedium)],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 16),
+                  GestureDetector(
+                    onTap: () {
+                      //  context.push(Routes.note);
+                    },
+                    child: SizedBox(
+                      height: 65,
+                      width: MediaQuery.sizeOf(context).width / 2 - 32,
+                      child: Card(
+                        color: AppColors.kWhite,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8), side: BorderSide(color: AppColors.kWhite, width: 1.0)),
+                        margin: const EdgeInsets.all(0),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [Icon(MdiIcons.setNone, color: AppColors.kPrimary), Text('', style: Theme.of(context).textTheme.labelMedium)],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               // const Spacer(),
             ],
           ),
