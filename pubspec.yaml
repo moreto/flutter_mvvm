@@ -20,6 +20,28 @@ dependencies:
   material_design_icons_flutter: ^7.0.7296
   google_fonts: ^6.2.1
   go_router: ^15.1.2
+  flutter_native_splash: ^2.4.6
+  # flutter_launcher_icons: ^0.14.3
+  dio: ^5.8.0+1
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/app/android_ios.png
+  # branding: assets/app/android_ios.png
+  # branding_bottom_padding: 24
+  color_dark: "#ffffff"
+  image_dark: assets/app/android_ios.png
+  branding_dark: assets/app/android_ios.png
+
+  android_12:
+    image: assets/app/android_ios.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/app/android_ios.png
+    icon_background_color_dark: "#ffffff"
+
+  web: false
+  android: true
+  ios: true
 
 dev_dependencies:
   flutter_test:
