@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'note_model.dart';
+import '../../data/models/note/note_model.dart';
 import 'note_viewmodel.dart';
 
 class NoteListView extends StatelessWidget {

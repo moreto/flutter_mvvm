@@ -1,7 +1,7 @@
 // lib/ui/auth/login_request_model_test.dart
 import 'dart:convert';
 
-import 'package:flutter_mvvm/ui/auth/login/login_request_model.dart';
+import 'package:flutter_mvvm/data/auth/login/login_request_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

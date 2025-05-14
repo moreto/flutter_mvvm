@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-import 'package:flutter_mvvm/ui/banco/banco_model.dart';
+import 'package:flutter_mvvm/data/models/banco/banco_model.dart';
 
 BancoResponseModel bancoResponseModelFromJson(String str) => BancoResponseModel.fromJson(json.decode(str));
 

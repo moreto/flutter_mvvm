@@ -5,7 +5,7 @@ import '../../../data/repository/auth/auth_request_model.dart';
 import '../../../utils/result.dart';
 
 class LoginViewModel {
-  LoginViewModel({required AuthRepository authRepository}) : _authRepository = authRepository {}
+  LoginViewModel({required AuthRepository authRepository}) : _authRepository = authRepository;
 
   final AuthRepository _authRepository;
 

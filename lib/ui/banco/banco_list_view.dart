@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_mvvm/commons/log.dart';
+import 'package:flutter_mvvm/data/models/banco/banco_model.dart';
 import 'package:flutter_mvvm/ui/banco/banco_list_viewmodel.dart';
-import 'package:flutter_mvvm/ui/banco/banco_model.dart';
 
 class BancoListView extends StatelessWidget {
   final BancoListViewModel viewModel = BancoListViewModel();

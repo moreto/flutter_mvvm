@@ -99,7 +99,7 @@ class ProviderHttp {
 
       Log.print('${_service.endpoint}, s: $elapsedSeconds, ms: $elapsedMilliseconds', titulo: 'Provider ${verb.name.toUpperCase()} $status');
       if (body != null) Log.printJson(body, titulo: 'Provider Body');
-      if (pathParam != null) Log.print(pathParam.toString(), titulo: 'Provider Param');
+      if (pathParam != '') Log.print(pathParam.toString(), titulo: 'Provider Param');
     }
   }
 
