@@ -15,15 +15,19 @@ class BancoListView extends StatelessWidget {
       appBar: AppBar(title: Text('Bancos')),
       body: BlocBuilder<BancoListViewModel, List<BancoModel>>(
         bloc: viewModel,
-        builder: (context, bancos) {
+        builder: (context, state) {
+          if (state.isEmpty) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
           return ListView.builder(
-            itemCount: bancos.length,
+            itemCount: state.length,
             itemBuilder: (context, index) {
               return ListTile(
-                title: Text(bancos[index].bancNome),
-                subtitle: Text(bancos[index].bancId.toString()),
+                title: Text(state[index].bancNome),
+                subtitle: Text(state[index].bancId.toString()),
                 onTap: () {
-                  Log.print('onTap: ${bancos[index].bancNome}');
+                  Log.print('onTap: ${state[index].bancNome}');
                   // _editNote(context, notes[index], index);
                 },
               );
@@ -31,6 +35,22 @@ class BancoListView extends StatelessWidget {
           );
         },
       ),
+      persistentFooterButtons: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            SizedBox(
+              width: MediaQuery.sizeOf(context).width / 2 - 24,
+              child: ElevatedButton(
+                onPressed: () {
+                  viewModel.list();
+                },
+                child: Text('atualizar'.toUpperCase()),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
