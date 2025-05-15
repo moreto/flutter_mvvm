@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'note_model.dart';
+import '../../data/models/note/note_model.dart';
 
 class NoteViewModel extends Cubit<List<Note>> {
   NoteViewModel() : super([]);

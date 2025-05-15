@@ -1,5 +1,5 @@
 // lib/ui/note/note_viewmodel_test.dart
-import 'package:flutter_mvvm/ui/note/note_model.dart';
+import 'package:flutter_mvvm/data/models/note/note_model.dart';
 import 'package:flutter_mvvm/ui/note/note_viewmodel.dart';
 import 'package:flutter_test/flutter_test.dart';
 
