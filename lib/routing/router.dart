@@ -1,9 +1,10 @@
 import 'package:flutter_mvvm/ui/auth/login/login_view.dart';
+import 'package:flutter_mvvm/ui/feriados/feriados_view.dart';
 import 'package:flutter_mvvm/ui/note/note_view.dart';
 import 'package:flutter_mvvm/ui/start/start_view.dart';
 import 'package:go_router/go_router.dart';
 
-import '../ui/banco/banco_list_view.dart';
+import '../ui/banks/banks_list_view.dart';
 import 'routes.dart';
 
 GoRouter router() => GoRouter(
@@ -14,7 +15,8 @@ GoRouter router() => GoRouter(
   routes: [
     GoRoute(path: Routes.login, builder: (context, state) => const LoginView()),
     GoRoute(path: Routes.start, builder: (context, state) => const StartView()),
-    GoRoute(path: Routes.bancoList, builder: (context, state) => BancoListView()),
+    GoRoute(path: Routes.banks, builder: (context, state) => BancoListView()),
+    GoRoute(path: Routes.feriados, builder: (context, state) => FeriadosView()),
     GoRoute(
       path: Routes.note,
       builder: (context, state) {

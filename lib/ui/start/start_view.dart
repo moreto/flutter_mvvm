@@ -91,7 +91,7 @@ class _StartViewState extends State<StartView> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      context.push(Routes.bancoList);
+                      context.push(Routes.banks);
                     },
                     child: SizedBox(
                       height: 65,
@@ -115,7 +115,7 @@ class _StartViewState extends State<StartView> {
                   const SizedBox(width: 16),
                   GestureDetector(
                     onTap: () {
-                      //  context.push(Routes.note);
+                      context.push(Routes.feriados);
                     },
                     child: SizedBox(
                       height: 65,
@@ -130,7 +130,7 @@ class _StartViewState extends State<StartView> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [Icon(MdiIcons.setNone, color: AppColors.kPrimary), Text('', style: Theme.of(context).textTheme.labelMedium)],
+                            children: [Icon(MdiIcons.calendar, color: AppColors.kPrimary), Text('feriados', style: Theme.of(context).textTheme.labelMedium)],
                           ),
                         ),
                       ),

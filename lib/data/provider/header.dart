@@ -5,7 +5,7 @@ class Header {
     'Access-Control-Allow-Headers': '*',
     'Content-Type': 'application/json; charset=UTF-8',
     'Charset': 'utf-8',
-    'x-token': '31d2f29a1660086bbe71f58dd3af4af3',
+    'x-token': '11223344',
     'x-interface': 'App',
   };
 
