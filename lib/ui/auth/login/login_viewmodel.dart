@@ -1,22 +1,18 @@
-import 'package:flutter_mvvm/data/repository/auth/auth_repository.dart';
-import 'package:flutter_mvvm/data/repository/auth/auth_response_model.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../data/repository/auth/auth_request_model.dart';
+import '../../../data/repository/auth/auth_response_model.dart';
 import '../../../utils/result.dart';
 
-class LoginViewModel {
-  LoginViewModel({required AuthRepository authRepository}) : _authRepository = authRepository;
+class LoginViewModel extends Cubit<List<AuthResponseModel>> {
+  LoginViewModel() : super([]);
 
-  final AuthRepository _authRepository;
+  Future<Result<bool>> login(String email, String senha) async {
+    if (email == 'mmoreto@gmail.com' && senha == '112233') {
+      // AuthResponseModel response = AuthResponseModel(
+      //   accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+      //   usuario: Usuario(usuaId: 1, usuaEmail: 'mmoreto@gmail.com', usuaStatus: true),
+      // );
 
-  Future<Result<bool>> _login(String email, String senha) async {
-    AuthRequestModel req = AuthRequestModel(email: email, senha: senha);
-
-    final json = await _authRepository.login(requestBody: req.toJson());
-
-    AuthResponseModel response = AuthResponseModel.fromJson(json);
-
-    if (response.valid) {
       return Result.ok(true);
     } else {
       return Result.error(Exception(false));

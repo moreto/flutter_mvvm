@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mvvm/ui/auth/login/login_viewmodel.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
+import '../../../routing/routes.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -10,6 +13,8 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  final LoginViewModel viewModel = LoginViewModel();
+
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   final TextEditingController _email = TextEditingController(text: 'mmoreto@gmail.com');
@@ -103,10 +108,16 @@ class _LoginViewState extends State<LoginView> {
                       width: MediaQuery.sizeOf(context).width / 2 - 24,
                       child: ElevatedButton(
                         onPressed: () {
-                          context.go('/start');
-                          // if (formKey.currentState!.validate()) {
-                          //   // controller.login();
-                          // }
+                          if (formKey.currentState!.validate()) {
+                            viewModel
+                                .login(_email.text, _password.text)
+                                .then((result) {
+                                  context.push(Routes.start);
+                                })
+                                .catchError((error) {
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('loginInvalido'), duration: const Duration(seconds: 2)));
+                                });
+                          }
                         },
                         child: Text('login'.toUpperCase()),
                       ),
