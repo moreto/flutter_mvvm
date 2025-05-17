@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_mvvm/commons/log.dart';
 import 'package:flutter_mvvm/ui/feriados/feriados_viewmodel.dart';
-import 'package:intl/intl.dart';
 
 import '../../data/models/feriados/feriados_response_model.dart';
 
@@ -10,9 +9,6 @@ class FeriadosView extends StatelessWidget {
   final FeriadosViewModel viewModel = FeriadosViewModel();
 
   FeriadosView({super.key});
-
-  final inputFormat = DateFormat('yyyy/MM/dd');
-  final outputFormat = DateFormat('dd/MM/yyyy');
 
   @override
   Widget build(BuildContext context) {
